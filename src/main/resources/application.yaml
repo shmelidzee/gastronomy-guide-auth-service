@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /swagger/swagger-ui.html
+
+spring:
+  application:
+    name: gastronomy-guide-auth-service
+  liquibase:
+    change-log: classpath:db/changelog.xml
+    enabled: true
+    user: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    default-schema:  gastronomy_auth
+    liquibase-schema: gastronomy_auth_migration
+    drop-first: true
+  datasource:
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/gastronomy-guide}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        default_schema: gastronomy_auth
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+token:
+  signing:
+    key: ${JWT_SIGNING_KEY:53A73E5F1C4E0A2D3B5F2D784E6A1B423D6F247D1F6E5C3A596D635A75327855}
+    expiration-time: ${JWT_EXPIRATION_TIME:3600000}
