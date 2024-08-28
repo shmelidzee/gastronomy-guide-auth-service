@@ -9,9 +9,11 @@ public interface JwtService {
 
     String generateToken(UserDetails userDetails);
 
-    String extractUsername(String token);
+    String generateRefreshToken(UserDetails userDetails);
 
-    <T> T extractClaim(String token, Function<Claims, T> claimsResolver);
+    String extractUsername(String token, String key);
 
-    boolean isTokenValid(String token, UserDetails userDetails);
+    <T> T extractClaim(String token, Function<Claims, T> claimsResolver, String key);
+
+    boolean isTokenValid(String token, UserDetails userDetails, boolean isRefreshToken);
 }

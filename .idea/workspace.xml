@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="101e5aa2-d5d8-4beb-99f1-12cf9a008c5c" name="Changes" comment="FIRST AUTH VERSION" />
+    <list default="true" id="101e5aa2-d5d8-4beb-99f1-12cf9a008c5c" name="Changes" comment="init">
+      <change afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/controller/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/model/dto/ErrorDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gastronomy/guide/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/config/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gastronomy/guide/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gastronomy/guide/filter/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/filter/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gastronomy/guide/model/dto/JWTAuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/model/dto/JWTAuthenticationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gastronomy/guide/model/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/model/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gastronomy/guide/model/enums/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/model/enums/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gastronomy/guide/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gastronomy/guide/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gastronomy/guide/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/service/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gastronomy/guide/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gastronomy/guide/service/impl/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/service/impl/AuthenticationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gastronomy/guide/service/impl/JwtServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/service/impl/JwtServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gastronomy/guide/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/initialization-table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/initialization-table.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +40,7 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
+        <option value="Exception" />
         <option value="Class" />
       </list>
     </option>
@@ -32,21 +53,21 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "shmelidzee"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;shmelidzee&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/shmelidzee/gastronomy-guide-auth-service",
-    "accountId": "a809be4d-ea4c-4e5f-ab73-44304c3b2c05"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/shmelidzee/gastronomy-guide-auth-service&quot;,
+    &quot;accountId&quot;: &quot;a809be4d-ea4c-4e5f-ab73-44304c3b2c05&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2lFiqbzo8f1FCepKzDV6L3wRrVb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -116,7 +137,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1724782417452</updated>
-      <workItem from="1724782418561" duration="8035000" />
+      <workItem from="1724782418561" duration="8366000" />
+      <workItem from="1724863617034" duration="6256000" />
     </task>
     <task id="LOCAL-00001" summary="FIRST AUTH VERSION">
       <option name="closed" value="true" />
@@ -134,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724790026079</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="init">
+      <option name="closed" value="true" />
+      <created>1724790543415</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1724790543415</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +172,19 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="FIRST AUTH VERSION" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIRST AUTH VERSION" />
+    <MESSAGE value="init" />
+    <option name="LAST_COMMIT_MESSAGE" value="init" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gastronomy/guide/filter/JwtAuthenticationFilter.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

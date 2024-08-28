@@ -5,6 +5,7 @@ import gastronomy.guide.model.dto.SignInRequest;
 import gastronomy.guide.model.dto.SignUpRequest;
 import gastronomy.guide.service.AuthenticationService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -31,5 +32,11 @@ public class AuthController {
     @PostMapping("/sign-in")
     public JWTAuthenticationResponse signIn(@RequestBody @Valid SignInRequest request) {
         return authenticationService.signIn(request);
+    }
+
+    @Operation(summary = "Авторизация пользователя")
+    @PostMapping("/refresh")
+    public JWTAuthenticationResponse refresh(@Parameter(name = "refreshToken") String refreshToken) {
+        return authenticationService.refresh(refreshToken);
     }
 }

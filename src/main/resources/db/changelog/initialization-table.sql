@@ -6,7 +6,8 @@ CREATE TABLE users
     username VARCHAR(75) unique not null,
     email    VARCHAR(255) unique not null,
     password VARCHAR(255)       not null,
-    role     VARCHAR(50)        not null
+    role     VARCHAR(50)        not null,
+    refresh_token text
 );
 
 CREATE SEQUENCE user_id_seq

@@ -9,4 +9,6 @@ public interface AuthenticationService {
     JWTAuthenticationResponse signUp(SignUpRequest request);
 
     JWTAuthenticationResponse signIn(SignInRequest request);
+
+    JWTAuthenticationResponse refresh(String refreshToken);
 }

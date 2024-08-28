@@ -11,6 +11,7 @@ import gastronomy.guide.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -25,18 +26,14 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public JWTAuthenticationResponse signUp(SignUpRequest request) {
-
         var user = User.builder()
                 .username(request.getUsername())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(Role.ROLE_USER)
                 .build();
-
         userService.create(user);
-
-        var jwt = jwtService.generateToken(user);
-        return new JWTAuthenticationResponse(jwt);
+        return generateTokens(user);
     }
 
     @Override
@@ -45,12 +42,28 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 request.getUsername(),
                 request.getPassword()
         ));
-
         var user = userService
                 .userDetailsService()
                 .loadUserByUsername(request.getUsername());
 
+        return generateTokens(user);
+    }
+
+    @Override
+    public JWTAuthenticationResponse refresh(String refreshToken) {
+        User user = userService.userByRefreshToken(refreshToken);
+        if (user != null) {
+            if (jwtService.isTokenValid(refreshToken, user, true)) {
+                return generateTokens(user);
+            }
+        }
+        throw new RuntimeException("Refresh token not found");
+    }
+
+    private JWTAuthenticationResponse generateTokens(UserDetails user) {
         var jwt = jwtService.generateToken(user);
-        return new JWTAuthenticationResponse(jwt);
+        var refreshJwt = jwtService.generateRefreshToken(user);
+        userService.updateRefreshToken(user, refreshJwt);
+        return new JWTAuthenticationResponse(jwt, refreshJwt);
     }
 }
