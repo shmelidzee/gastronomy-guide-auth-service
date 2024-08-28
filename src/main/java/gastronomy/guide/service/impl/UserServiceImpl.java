@@ -1,5 +1,6 @@
 package gastronomy.guide.service.impl;
 
+import gastronomy.guide.exception.BadParameterUserException;
 import gastronomy.guide.model.entities.User;
 import gastronomy.guide.repository.UserRepository;
 import gastronomy.guide.service.UserService;
@@ -18,11 +19,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public User create(User user) {
         if (userRepository.existsByUsername(user.getUsername())) {
-            throw new RuntimeException("Пользователь с таким именем уже существует");
+            throw new BadParameterUserException("Пользователь с таким именем уже существует");
         }
 
         if (userRepository.existsByEmail(user.getEmail())) {
-            throw new RuntimeException("Пользователь с таким email уже существует");
+            throw new BadParameterUserException("Пользователь с таким email уже существует");
+        }
+
+        if (user.getEmail() == null){
+            throw new BadParameterUserException("email обязательное поле");
         }
 
         return save(user);
