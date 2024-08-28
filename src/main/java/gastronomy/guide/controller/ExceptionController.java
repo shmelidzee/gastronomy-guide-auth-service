@@ -2,6 +2,7 @@ package gastronomy.guide.controller;
 
 import gastronomy.guide.exception.BadParameterUserException;
 import gastronomy.guide.model.dto.ErrorDTO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.AuthenticationException;
@@ -36,6 +37,7 @@ public class ExceptionController {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorDTO> handleException(Exception e) {
+        e.printStackTrace();
         ErrorDTO errorDTO = new ErrorDTO("Внутренняя ошибка сервера");
         return new ResponseEntity<>(errorDTO, HttpStatus.INTERNAL_SERVER_ERROR);
     }

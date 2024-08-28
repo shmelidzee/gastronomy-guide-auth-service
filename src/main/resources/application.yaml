@@ -3,7 +3,8 @@ server:
 
 springdoc:
   swagger-ui:
-    path: /swagger/swagger-ui.html
+    operationsSorter: method
+    tagsSorter: alpha
 
 spring:
   application:
