@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="101e5aa2-d5d8-4beb-99f1-12cf9a008c5c" name="Changes" comment="add refresh">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/controller/ExceptionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/exception/UserAlreadyCreatedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/model/dto/ErrorDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gastronomy/guide/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gastronomy/guide/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gastronomy/guide/service/impl/UserServiceImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="101e5aa2-d5d8-4beb-99f1-12cf9a008c5c" name="Changes" comment="add errors" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +64,7 @@
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.GastronomyGuideAuthServiceApplication.executor": "Debug",
+    "Spring Boot.GastronomyGuideAuthServiceApplication.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -125,7 +118,7 @@
       <option name="presentableId" value="Default" />
       <updated>1724782417452</updated>
       <workItem from="1724782418561" duration="8366000" />
-      <workItem from="1724863617034" duration="7507000" />
+      <workItem from="1724863617034" duration="7818000" />
     </task>
     <task id="LOCAL-00001" summary="FIRST AUTH VERSION">
       <option name="closed" value="true" />
@@ -159,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724870038922</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add errors">
+      <option name="closed" value="true" />
+      <created>1724871433221</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1724871433221</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,28 +170,8 @@
     <MESSAGE value="FIRST AUTH VERSION" />
     <MESSAGE value="init" />
     <MESSAGE value="add refresh" />
-    <option name="LAST_COMMIT_MESSAGE" value="add refresh" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/gastronomy/guide/controller/ExceptionController.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/gastronomy/guide/controller/ExceptionController.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/gastronomy/guide/controller/ExceptionController.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="add errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="add errors" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
