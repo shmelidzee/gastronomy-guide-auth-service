@@ -1,5 +1,6 @@
 package gastronomy.guide.service.impl;
 
+import gastronomy.guide.model.propetries.JWTProperties;
 import gastronomy.guide.service.JwtService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -7,7 +8,6 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -21,21 +21,11 @@ import java.util.function.Function;
 @RequiredArgsConstructor
 public class JwtServiceImpl implements JwtService {
 
-    @Value("${token.signing.access-key}")
-    private String jwtSigningKey;
-
-    @Value("${token.signing.refresh-key}")
-    private String jwtRefreshKey;
-
-    @Value("${token.signing.access-expiration-time}")
-    private long jwtExpiration;
-
-    @Value("${token.signing.refresh-expiration-time}")
-    private long jwtRefreshExpiration;
+    private final JWTProperties jwtProperties;
 
     @Override
     public String extractUsername(String token, String key) {
-        key = key == null ? jwtSigningKey : key;
+        key = key == null ? jwtProperties.getAccessKey() : key;
         return extractClaim(token, Claims::getSubject, key);
     }
 
@@ -47,17 +37,17 @@ public class JwtServiceImpl implements JwtService {
 
     @Override
     public String generateToken(UserDetails userDetails) {
-        return buildToken(new HashMap<>(), jwtSigningKey, userDetails, jwtExpiration);
+        return buildToken(new HashMap<>(), jwtProperties.getAccessKey(), userDetails, jwtProperties.getAccessExpirationTime());
     }
 
     @Override
     public String generateRefreshToken(UserDetails userDetails) {
-        return buildToken(new HashMap<>(), jwtRefreshKey, userDetails, jwtRefreshExpiration);
+        return buildToken(new HashMap<>(), jwtProperties.getRefreshKey(), userDetails, jwtProperties.getRefreshExpirationTime());
     }
 
     @Override
     public boolean isTokenValid(String token, UserDetails userDetails, boolean isRefreshToken) {
-        String key = isRefreshToken ? jwtRefreshKey : jwtSigningKey;
+        String key = isRefreshToken ? jwtProperties.getRefreshKey() : jwtProperties.getAccessKey();
         final String username = extractUsername(token, key);
         return (username.equals(userDetails.getUsername())) && !isTokenExpired(token, key);
     }
@@ -68,6 +58,7 @@ public class JwtServiceImpl implements JwtService {
             UserDetails userDetails,
             long expiration
     ) {
+        extraClaims.put("username", userDetails.getUsername());
         return Jwts
                 .builder()
                 .setClaims(extraClaims)
